@@ -1,20 +1,10 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  border: none;
-  background: transparent;
+.site-nav .site-nav_search-input {
+  flex-shrink: 1;
+  flex-grow: 1;
 }
 
-.site-nav {
-  height: 8vh;
-  width: 90%;
-  margin: auto;
-  padding: 16px 0 16px 0;
-  border: 1px solid red;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+.site-nav > * {
+  flex-shrink: 0;
 }
 
 .site-nav .fas,
@@ -27,27 +17,10 @@
   margin-right: 16px;
 }
 
-.site-nav_menu-trigger {
-  height: 25px;
-}
-
-.site-nav_user-actions {
-  list-style: none;
-  display: flex;
-  align-items: center;
-  margin-left: auto;
+.site-nav_user-actions .fas {
+  margin-right: 0;
 }
 
 .site-nav_search-wrapper {
-  margin: 0 50px 0 50px;
-  border: 2px solid green;
-}
-
-.is-userAvatar {
-  content: "";
-  display: inline-block;
-  height: 32px;
-  width: 32px;
-  background: grey;
-  border-radius: 15px;
+  display: flex;
 }
