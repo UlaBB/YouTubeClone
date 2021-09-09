@@ -9,10 +9,10 @@ $symbol-color: rgb(189, 189, 189);
   box-sizing: border-box;
   border: none;
   background: transparent;
+  font-family: "Roboto", sans-serif;
 }
 
 .site-nav {
-  border: 1px solid red;
   height: 8vh;
   width: 90vw;
   margin: auto;
@@ -21,12 +21,20 @@ $symbol-color: rgb(189, 189, 189);
   justify-content: space-between;
   align-items: center;
 
+  // > * {
+  //   flex-shrink: 0;
+  // }
+
   &_menu-trigger {
     color: $text-color;
     font-size: 16px;
     height: 25px;
     margin-right: 27px;
     cursor: pointer;
+
+    i {
+      font-size: 18px;
+    }
   }
 
   &_logo {
@@ -39,8 +47,14 @@ $symbol-color: rgb(189, 189, 189);
       color: red;
     }
 
+    &-symbol i {
+      font-size: 30px;
+      margin-right: 5px;
+    }
+
     &-text {
-      font-size: 14px;
+      font-size: 16px;
+      text-size-adjust: auto;
     }
   }
 
@@ -50,11 +64,14 @@ $symbol-color: rgb(189, 189, 189);
       margin: 0 50px;
       flex-grow: 1;
       color: $text-color;
+      min-width: 100px;
+      height: 30px;
     }
 
     &-back {
       color: $text-color;
       cursor: pointer;
+      display: none;
     }
 
     &-input {
@@ -63,20 +80,26 @@ $symbol-color: rgb(189, 189, 189);
       border: 1px solid $text-color;
       padding: 0 5px;
       margin-left: 5px;
+      min-width: 80px;
+      border-top-left-radius: 5px;
+      border-bottom-left-radius: 5px;
     }
 
     &-trigger {
       background: $symbol-color;
-      border: 1px solid $symbol-color;
-      width: 60px;
+      border: 1px solid $text-color;
+      width: 30px;
       cursor: pointer;
       border-left: none;
+      flex-shrink: 0;
+      border-top-right-radius: 5px;
+      border-bottom-right-radius: 5px;
     }
   }
 
   &_user {
     &-actions {
-      min-width: 225px;
+      //min-width: 225px;
       display: flex;
       list-style: none;
       align-items: center;
@@ -87,19 +110,50 @@ $symbol-color: rgb(189, 189, 189);
 
     &-action i {
       color: $text-color;
+      font-size: 16px;
     }
   }
 }
 
-.is-userAvatar::after {
-  content: "";
-  display: inline-block;
+.is-userAvatar {
   height: 32px;
   width: 32px;
   background: grey;
   border-radius: 15px;
 }
 
+.is-mobile-search-trigger {
+  display: none;
+}
+
 @media (max-width: 656px) {
-  background: orange;
+  .is-mobile-search-trigger {
+    display: block;
+  }
+
+  .site-nav_search-back {
+    display: block;
+  }
+
+  .site-nav_search-wrapper {
+    display: none;
+  }
+
+  // .site-nav_user-actions {
+  //   width: 80px;
+  // }
+
+  // .is-mobile-hidden {
+  //   display: none;
+  // }
+}
+
+@media (max-width: 480px) {
+  .site-nav_user-actions {
+    width: 80px;
+  }
+
+  .is-mobile-hidden {
+    display: none;
+  }
 }
