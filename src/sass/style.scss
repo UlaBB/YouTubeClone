@@ -1,6 +1,7 @@
 @import "./variables.scss";
 @import "../sass/site-nav.scss";
 @import "./channel_header.scss";
+@import "./video-section.scss";
 
 * {
   margin: 0;
@@ -9,4 +10,10 @@
   border: none;
   background: transparent;
   font-family: "Roboto", sans-serif;
+}
+
+body {
+  height: 100vh;
+  width: 100vw;
+  overflow-x: hidden;
 }
